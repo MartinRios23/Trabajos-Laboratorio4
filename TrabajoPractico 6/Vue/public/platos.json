@@ -1,0 +1,28 @@
+{
+    "platos": [
+        {
+            "id":"1",
+            "nombre":"Bateria",
+            "precio":"12000",
+            "marca":"Grestch",
+            "imagenPath":"",
+            "costoEnvio":"300"
+        },
+        {
+            "id":"2",
+            "nombre":"Guitarra",
+            "precio":"22000",
+            "marca":"Grestch",
+            "imagenPath":"",
+            "costoEnvio":"g"
+        },
+        {
+            "id":"3",
+            "nombre":"Bajo",
+            "precio":"30000",
+            "marca":"Ibanez",
+            "imagenPath":"",
+            "costoEnvio":"800"
+        }
+    ]
+}

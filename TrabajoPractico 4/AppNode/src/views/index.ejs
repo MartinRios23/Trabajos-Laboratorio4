@@ -1,0 +1,99 @@
+<%- include('partials/_header') %>
+    <div class="container">
+        <div class='row'>
+            <!-- FORMULARIO-->
+            <div class='col-md-4'>
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/add" method="POST">
+                            <div class="form-group mb-3">
+                                <label for="legajo">Legajo</label>
+                                <input type="number" name="Legajo" id="legajo" class="form-control">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="apellido">Apellido</label>
+                                <input type="text" name="Apellido" id="apellido" class="form-control">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" name="Nombre" id="nombre" class="form-control">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="DNI">DNI</label>
+                                <input type="number" name="DNI" id="DNI" class="form-control">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="sector">Sector</label>
+                                <input type="text" name="Sector" id="sector" class="form-control">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="fechaingreso">Fecha de Ingreso</label>
+                                <input type="date" name="FechaIngreso" id="fechaingreso" class="form-control">
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary mt-2">
+                                    Agregar
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- LISTADO-->
+            <div class='col-md-8 mt-3'>
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Legajo</th>
+                            <th>Apellido</th>
+                            <th>Nombre</th>
+                            <th>DNI</th>
+                            <th>Sector</th>
+                            <th>Fecha de Ingreso</th>
+                            <th>Status</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0; i < tasks.length; i++) {%>
+                            <tr>
+                                <td>
+                                    <%= tasks[i].Legajo%>
+                                </td>
+                                <td>
+                                    <%= tasks[i].Apellido%>
+                                </td>
+                                <td>
+                                    <%= tasks[i].Nombre%>
+                                </td>
+                                <td>
+                                    <%= tasks[i].DNI%>
+                                </td>
+                                <td>
+                                    <%= tasks[i].Sector%>
+                                </td>
+                                <td>
+                                    <%= tasks[i].FechaIngreso.toDateString()%>
+                                </td>
+                                <td>
+                                    <a href="/turn/<%- tasks[i]._id %>"
+                                        class="btn <%- tasks[i].activo ? 'btn-success' : 'btn-dark' %>">
+                                        Activo
+                                    </a>
+                                </td>
+                                <td>
+
+                                    <a href="/delete/<%= tasks[i]._id%>" class="btn btn-danger">Borrar</a>
+                                    <a href="/edit/<%= tasks[i]._id%>" class="btn btn-info">Editar</a>
+                                </td>
+                            </tr>
+                            <%}%>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/_footer') %>

@@ -1,0 +1,50 @@
+<%- include('partials/_header') %>
+
+
+    <div class="container">
+        <div class="row">
+            <!-- FORMULARIO-->
+            <div class='col-md-4 offset-md-4'>
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/edit/<%=task._id%>" method="POST">
+                            <div class="form-group mb-3">
+                                <label for="legajo">Legajo</label>
+                                <input type="number" name="Legajo" id="legajo" class="form-control"
+                                    value="<%=task.Legajo%>">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="apellido">Apellido</label>
+                                <input type="text" name="Apellido" id="apellido" class="form-control"
+                                    value="<%=task.Apellido%>">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" name="Nombre" id="nombre" class="form-control"
+                                    value="<%=task.Nombre%>">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="DNI">DNI</label>
+                                <input type="number" name="DNI" id="DNI" class="form-control" value="<%=task.DNI%>">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="sector">Sector</label>
+                                <input type="text" name="Sector" id="sector" class="form-control"
+                                    value="<%=task.Sector%>">
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary mt-2">
+                                    Actualizar
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <%- include('partials/_footer') %>

@@ -1,0 +1,17 @@
+.izquierda img{
+    height: 200px;
+    width: 50%;
+}
+
+.izquierda {
+    width: 50%;
+}
+
+.detalle {
+    display: flex;
+}
+
+.derecha {
+
+    width: 50%;
+}
